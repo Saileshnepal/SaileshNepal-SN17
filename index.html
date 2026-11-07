@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sailesh Nepal | Creative Developer &amp; Engineer</title>
+    <meta name="description" content="Sailesh Nepal — creative developer and electronics engineering student building thoughtful web, mobile, and immersive 3D experiences.">
+    <meta name="theme-color" content="#070b18">
+    <meta property="og:title" content="Sailesh Nepal — Creative Developer &amp; Engineer">
+    <meta property="og:description" content="Engineering ideas into digital worlds. Explore my apps, web projects, and immersive 3D experiments.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="picofme000.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+        <p>Loading experience...</p>
+    </div>
+
+    <!-- Ambient background uses CSS; the original Three.js file now drives the hero artwork. -->
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="site-nav" aria-label="Main navigation">
+        <a class="logo" href="#home" aria-label="Sailesh Nepal, home"><span class="logo-mark">SN<span class="logo-dot">.</span></span><span class="logo-name">Sailesh Nepal<span class="logo-caption">/ Developer &amp; Engineer</span></span></a>
+        <div class="nav-links" id="primary-nav">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#apps">Apps</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <div class="theme-toggle">
+                <button type="button" class="theme-switch" id="theme-switch" aria-label="Switch color theme" aria-pressed="false">
+                    <span class="theme-switch-track"></span>
+                    <span class="theme-switch-thumb"><i class="fas fa-moon theme-switch-icon" aria-hidden="true"></i></span>
+                </button>
+            </div>
+        </div>
+        <button type="button" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><span aria-hidden="true">☰</span></button>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section: immersive Three.js artwork + editorial introduction -->
+        <section id="home" class="hero">
+            <div class="hero-noise" aria-hidden="true"></div>
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <div class="hero-eyebrow"><span class="availability-dot"></span> AVAILABLE FOR COLLABORATION <span class="eyebrow-divider"></span> NEPAL / WORLDWIDE</div>
+                    <p class="hero-overline">CREATIVE DEVELOPMENT <span class="overline-star">✳</span> ELECTRONICS &amp; DESIGN</p>
+                    <h1>Engineering ideas<br>into <span class="highlight">digital worlds<span class="headline-period">.</span></span></h1>
+                    <p class="hero-description">Hey, I'm <strong>Sailesh Nepal.</strong> A developer and electronics engineering student who turns curious ideas into useful, beautifully crafted web, mobile, and 3D experiences.</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn primary">Explore my work <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        <a href="#contact" class="btn secondary">Let's connect <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="hero-social"><span>FIND ME ON</span><a href="https://github.com/Saileshnepal" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GITHUB <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/sailesh-nepal-ba3382309/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LINKEDIN <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+                </div>
+                <div class="hero-visual" role="img" aria-label="Interactive holographic 3D sculpture surrounded by glowing orbital rings">
+                    <div class="visual-glow" aria-hidden="true"></div>
+                    <div class="visual-grid" aria-hidden="true"></div>
+                    <div class="hero-fallback-sculpture" aria-hidden="true"></div>
+                    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+                    <div class="visual-tag visual-tag-top" aria-hidden="true"><span class="tiny-square"></span><span>INTERACTIVE<br><strong>3D EXPERIENCE</strong></span><span class="visual-tag-cross">↗</span></div>
+                    <div class="visual-tag visual-tag-bottom" aria-hidden="true"><span class="visual-tag-number">01</span><span>IMAGINE<br><strong>→ BUILD → EXPLORE</strong></span></div>
+                    <div class="visual-coordinates" aria-hidden="true">X: 27.4° / Y: 84.9°<span>● LIVE RENDER</span></div>
+                    <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false" aria-label="Pause 3D animation"><i class="fas fa-pause" aria-hidden="true"></i><span>PAUSE MOTION</span></button>
+                </div>
+            </div>
+            <div class="hero-footer"><a href="#about" class="scroll-indicator"><span class="scroll-line"></span> SCROLL TO EXPLORE <i class="fas fa-arrow-down" aria-hidden="true"></i></a><div class="hero-count">PORTFOLIO <span>—</span> 2026 <span class="hero-count-divider">/</span> 01—05</div></div>
+        </section>
+
+        <div class="capability-strip" aria-label="What I work on">
+            <div class="capability-item"><span class="capability-symbol">✳</span><span>Creative web development</span><span class="capability-arrow">↗</span></div>
+            <div class="capability-item"><span class="capability-symbol">◎</span><span>Mobile app experiences</span><span class="capability-arrow">↗</span></div>
+            <div class="capability-item"><span class="capability-symbol">◈</span><span>Interactive 3D worlds</span><span class="capability-arrow">↗</span></div>
+        </div>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="section-header">
+                <p class="section-kicker">01 / BEHIND THE CODE</p>
+                <h2>Curious mind. <span class="section-emphasis">Builder's spirit.</span></h2>
+                <p class="section-summary">A little about the person behind the projects.</p>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-container">
+                        <img src="Profile.png" alt="Portrait of Sailesh Nepal" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="portrait-caption"><span class="portrait-caption-dot"></span> BASED IN HETAUDA, NEPAL <span>↗</span></div>
+                </div>
+                <div class="about-text">
+                    <h3>Who Am I?</h3>
+                    <p>Hi! I'm from Hetauda-8, Nepal and I'm a bachelor’s student in Electronics, Communication, and
+                        Information Engineering at Purwanchal Campus, TU. I'm a frontend web developer and React Native
+                        app developer. I also completed the CS50 AI Nepal course and enjoy learning more about AI.</p>
+
+                    <h3>Where It All Began</h3>
+                    <p>I didn’t have much interest in technology during school or +2 at Makawanpur Multiple Campus
+                        because I was focused on science subjects like Physics, Chemistry, and Biology. My interest in
+                        tech really began after I joined Electronics Engineering. That’s when I started exploring coding
+                        and development, and I discovered my passion for building websites, apps, and learning new tech
+                        skills.</p>
+
+                    <h3>What Drives Me</h3>
+                    <p>I believe technology should be easy to use and understand. Whether I’m building a website or a
+                        mobile app, I focus on making it simple, clear, and helpful for everyone. My workflow blends
+                        creativity with logic, and I’m constantly refining my skills to keep up with the pace of
+                        innovation.</p>
+
+                    <h3>My Hobbies</h3>
+                    <p>When I'm not coding, you'll find me playing football on the ground, cycling through the streets,
+                        watching movies, or planning my next travel adventure. These moments keep me grounded and give
+                        me a fresh perspective that I carry back into my work.</p>
+
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <span class="info-label">Name:</span>
+                            <span class="info-value">Sailesh Nepal</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <span class="info-value">nepalsailesh00@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Location:</span>
+                            <span class="info-value">Hetauda-8, Nepal</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Availability:</span>
+                            <span class="info-value available">Available for Freelance – Remote & On-site</span>
+                        </div>
+                    </div>
+
+                    <a href="project/CV.pdf" class="btn primary download-cv" target="_blank" rel="noopener noreferrer">Download CV <i
+                            class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="section-header">
+                <p class="section-kicker">02 / THE TOOLKIT</p>
+                <h2>Tools to turn <span class="section-emphasis">ideas into impact.</span></h2>
+                <p class="section-summary">From core engineering fundamentals to expressive frontend experiences.</p>
+                <div class="underline"></div>
+            </div>
+            <div class="skills-content">
+                <div class="skills-text">
+                    <p>I've worked with a variety of programming languages, tools, and technologies. Here's a snapshot
+                        of what I bring to the table:</p>
+                </div>
+                <div class="skills-categories">
+
+                    <!-- Unified Skills Section -->
+                    <div class="skill-category">
+                        <h3>Programming Languages & Tools</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item" data-skill="C">
+                                <div class="skill-icon"><i class="fas fa-code"></i></div>
+                                <div class="skill-name">C</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="C++">
+                                <div class="skill-icon"><i class="fas fa-code"></i></div>
+                                <div class="skill-name">C++</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="Python">
+                                <div class="skill-icon"><i class="fab fa-python"></i></div>
+                                <div class="skill-name">Python</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="HTML5">
+                                <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                                <div class="skill-name">HTML5</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="CSS3">
+                                <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                                <div class="skill-name">CSS3</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="JavaScript">
+                                <div class="skill-icon"><i class="fab fa-js"></i></div>
+                                <div class="skill-name">JavaScript</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="React">
+                                <div class="skill-icon"><i class="fab fa-react"></i></div>
+                                <div class="skill-name">React</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="React Native">
+                                <div class="skill-icon"><i class="fab fa-react"></i></div>
+                                <div class="skill-name">React Native</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 55%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="Git">
+                                <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                                <div class="skill-name">Git</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 55%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="Figma">
+                                <div class="skill-icon"><i class="fab fa-figma"></i></div>
+                                <div class="skill-name">Figma</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="Three.js">
+                                <div class="skill-icon"><i class="fas fa-cube"></i></div>
+                                <div class="skill-name">Three.js</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 55%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="Responsive Design">
+                                <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+                                <div class="skill-name">Responsive Design</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- App Section -->
+        <section id="apps" class="apps">
+            <div class="section-header">
+                <p class="section-kicker">03 / PRODUCTS IN THE WILD</p>
+                <h2>Built to be <span class="section-emphasis">used.</span></h2>
+                <p class="section-summary">Mobile projects with a place beyond the code editor.</p>
+                <div class="underline"></div>
+            </div>
+            <div class="apps-grid">
+                <div class="app-card">
+                    <div class="app-preview">
+                        <div class="app-phone-frame">
+                            <div class="app-screen">
+                                <img src="project/rachana.png" alt="Nepali Rachana app screen" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-info">
+                        <div class="app-type"><span class="app-type-dot"></span> ANDROID APP <span>↗</span></div>
+                        <h3 class="project-title">Nepali Rachana – नेपाली रचना</h3>
+                        <p class="project-description">A Nepali-language learning companion for writing and creative expression.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.saileshnepal.NepaliRachana"
+                            class="btn primary" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-google-play"></i> View on Play Store
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <div class="app-preview">
+                        <div class="app-phone-frame">
+                            <div class="app-screen">
+                                <img src="project/expense.png" alt="Daily ExpenseTracker app screen" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-info">
+                        <div class="app-type"><span class="app-type-dot"></span> ANDROID APP <span>↗</span></div>
+                        <h3 class="project-title">Daily - ExpenseTracker</h3>
+                        <p class="project-description">A simple companion for organizing daily expenses and building better habits.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.saileshnepal.ExpenseTracker"
+                            class="btn primary" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-google-play"></i> View on Play Store
+                        </a>
+                    </div>
+                </div>
+                <div class="app-card">
+                    <div class="app-preview">
+                        <div class="app-phone-frame">
+                            <div class="app-screen">
+                                <img src="project/todo.png" alt="To Do List Timer app screen" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-info">
+                        <div class="app-type"><span class="app-type-dot"></span> ANDROID APP <span>↗</span></div>
+                        <h3 class="project-title">To Do List : Timer</h3>
+                        <p class="project-description">A practical to-do list and timer for focused, organized days.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.saileshnepal.todoList"
+                            class="btn primary" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-google-play"></i> View on Play Store
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="section-header">
+                <p class="section-kicker">04 / SELECTED EXPERIMENTS</p>
+                <h2>Work worth <span class="section-emphasis">exploring.</span></h2>
+                <p class="section-summary">A selection of websites, playful interfaces, games, and interactive 3D ideas.</p>
+                <div class="underline"></div>
+            </div>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="3d">3D Projects</button>
+            </div>
+            <div class="projects-meta"><span>HAND-PICKED PROJECTS</span><span id="project-count" aria-live="polite">06 PROJECTS</span></div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="web 3d">
+                    <div class="project-img">
+                        <img src="project/3D login page.png" alt="3D Login Page project preview" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Saileshnepal/3D-Login-page" class="project-link"
+                                    target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+                                <a href="https://github.com/Saileshnepal/3D-Login-page" class="project-github"
+                                    target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">3D Login Page</h3>
+                        <p class="project-description">A 3D login page using Three.js, HTML, CSS, and JavaScript.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Three.js</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img">
+                        <img src="project/Ecom.png" alt="E-commerce Platform project preview" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Saileshnepal/e-commerce-website" class="project-link"
+                                    target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+                                <a href="https://github.com/Saileshnepal/e-commerce-website" class="project-github"
+                                    target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">E-commerce Platform</h3>
+                        <p class="project-description">A full-featured e-commerce platform with product catalog, cart
+                            functionality, and payment integration.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="design">
+                    <div class="project-img">
+                        <img src="project/Game.png" alt="Tic Tac Toe game preview" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Saileshnepal/tic-tac-toe" class="project-link"
+                                    target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+                                <a href="https://github.com/Saileshnepal/tic-tac-toe" class="project-github"
+                                    target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Tic Tac Toe</h3>
+                        <p class="project-description">Tic Tac Toe game designed using javascript.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="web 3d">
+                    <div class="project-img">
+                        <img src="project/Village Explorer.png" alt="Village Explorer 3D project preview" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Saileshnepal/Village-Explorer" class="project-link"
+                                    target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+                                <a href="https://github.com/Saileshnepal/Village-Explorer" class="project-github"
+                                    target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Village Explorer</h3>
+                        <p class="project-description">A virtual tour of a village using Three.js, HTML, CSS, and
+                            JavaScript.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Three.js</span>
+                            <span>JavaScript</span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-category="3d">
+                    <div class="project-img">
+                        <img src="project/snake.png" alt="3D Snake Game project preview" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Saileshnepal/Snake-3d-game" class="project-link"
+                                    target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+                                <a href="https://github.com/Saileshnepal/Snake-3d-game" class="project-github"
+                                    target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">3d snake game</h3>
+                        <p class="project-description">A 3D snake game built using python.</p>
+                        <div class="project-tech">
+                            <span>python</span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card" data-category="design 3d">
+                    <div class="project-img">
+                        <img src="project/walking man 3d.png" alt="Walking Man 3D project preview" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/Saileshnepal/walking-man-3d" class="project-link"
+                                    target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+                                <a href="https://github.com/Saileshnepal/walking-man-3d" class="project-github"
+                                    target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Walking Man 3D</h3>
+                        <p class="project-description">A 3D animation of a walking man using TypeScript.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>CSS</span>
+                            <span>TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Talk</h3>
+                    <p>Feel free to reach out if you're looking for a developer, have a question, or just want to
+                        connect.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>nepalsailesh00@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+977 9827244677</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Hetauda-8, Nepal</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/Saileshnepal" class="social-link" target="_blank"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/sailesh-nepal-ba3382309/" class="social-link"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/saileshnepal17" class="social-link" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form" method="POST"
+                        action="https://script.google.com/macros/s/AKfycbwqRL5035wvwTkOktNT_6oSIJtt-fqVc55gdsiaymH18Z0J-rkW6MkE1S2dp7mLRXll/exec">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary submit-btn">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <div id="form-status" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a class="footer-logo" href="#home">SN<span>.</span> <small>/ SAILESH NEPAL</small></a>
+            <p class="footer-text">Thoughtfully engineered. Creatively built. Always curious.</p>
+            <div class="footer-social">
+                <a href="https://github.com/Saileshnepal" class="social-link" target="_blank"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sailesh-nepal-ba3382309/" class="social-link"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/saileshnepal17" class="social-link" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sailesh Nepal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script defer src="main.js?v=3"></script>
+    <script src="three-effects.js?v=3"></script>
+</body>
+
+</html>
